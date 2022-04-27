@@ -1,1 +1,23 @@
 /* add home page styles here */
+
+#head {
+    height: 200px;
+    width: 200px;
+    background-image: url('../assets/bird-head.png')
+}
+
+#middle {
+    height: 200px;
+    width: 200px;
+    background-image: url('../assets/blue-middle.png')
+}
+
+#bottom {
+    height: 200px;
+    width: 200px;
+    background-image: url('../assets/blue-pants.png')
+}
+
+#catchPhrase {
+
+}
