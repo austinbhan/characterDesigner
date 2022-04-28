@@ -19,5 +19,6 @@
 }
 
 #catchPhrase {
-
+    display: flex;
+    flex-direction: row;
 }
