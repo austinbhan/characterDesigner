@@ -10,15 +10,12 @@ const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
-
 // set state for how many times the user changes the head, middle, and bottom
-
 let headChange = 0;
 let middleChange = 0;
 let bottomChange = 0;
 
 // set state for all of the character's catchphrases
-
 let catchphrases = [];
 
 headDropdown.addEventListener('change', () => {
@@ -33,7 +30,6 @@ headDropdown.addEventListener('change', () => {
     //assets/duck-head.png
 });
 
-
 middleDropdown.addEventListener('change', () => {
     // get the value of the middle dropdown
     console.log('changing select', middleDropdown.value);
@@ -44,7 +40,6 @@ middleDropdown.addEventListener('change', () => {
     // update the stats to show the new count (call displayStats() to do this work)
     displayStats();
 });
-
 
 bottomDropdown.addEventListener('change', () => {
     // get the value of the bottom dropdown
@@ -77,14 +72,11 @@ function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
     catchphrasesEl.textContent = ' ';
     // loop through each catchphrase in state
-    for (let phrase of catchphrases) {
     // and for each catchphrase
-
-        const catchPhraseHistory = document.createElement('div');
-        
-        catchPhraseHistory.textContent = phrase;
+    for (let phrase of catchphrases) {
     // create an HTML element with the catchphrase as its text content
-        
+        const catchPhraseHistory = document.createElement('div');
+        catchPhraseHistory.textContent = phrase;
     // and append that HTML element to the cleared-out DOM
         catchphrasesEl.append(catchPhraseHistory);
     }
