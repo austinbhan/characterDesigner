@@ -28,7 +28,7 @@ headDropdown.addEventListener('change', () => {
     // update the dom for the head (use style.backgroundImage on the headEl div instead of trying to set the .src -- it's NOT an img tag!)
     headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
     // update the stats to show the new count (call displayStats() to do this work)
-    displayStats();
+    displayStats(headChange);
     //assets/duck-head.png
 });
 
@@ -41,7 +41,7 @@ middleDropdown.addEventListener('change', () => {
     // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
     middleEl.style.backgroundImage = `url('./assets/${middleDropdown.value}-middle.png')`;
     // update the stats to show the new count (call displayStats() to do this work)
-    displayStats();
+    displayStats(middleChange);
 });
 
 
@@ -53,23 +53,23 @@ bottomDropdown.addEventListener('change', () => {
     // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
     bottomEl.style.backgroundImage = `url('./assets/${bottomDropdown.value}-pants.png')`;
     // update the stats to show the new count (call displayStats() to do this work)
-    displayStats();
+    displayStats(bottomChange);
 });
 
 catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
-    
+    let catchphraseValue = catchphraseInput.value;
     // push the new catchphrase to the catchphrase array in state
-    catchphrases.push(catchphraseInput.value);
+    catchphrases.push(catchphraseValue);
     // clear out the form input's value so it's empty to the user
     catchphraseInput.value = '';
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
     console.log(catchphrases); 
-
 });
 
 function displayStats() {
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
+
 }
 
 function displayCatchphrases() {
