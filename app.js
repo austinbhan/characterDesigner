@@ -10,6 +10,7 @@ const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
+
 // set state for how many times the user changes the head, middle, and bottom
 
 let headChange = 0;
@@ -64,7 +65,7 @@ catchphraseButton.addEventListener('click', () => {
     // clear out the form input's value so it's empty to the user
     catchphraseInput.value = '';
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
-    console.log(catchphrases); 
+    displayCatchphrases();
 });
 
 function displayStats() {
@@ -74,12 +75,17 @@ function displayStats() {
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
-
+    catchphrasesEl.textContent = ' ';
     // loop through each catchphrase in state
-   
+    for (let phrase of catchphrases) {
     // and for each catchphrase
-    
+
+        const catchPhraseHistory = document.createElement('div');
+        
+        catchPhraseHistory.textContent = phrase;
     // create an HTML element with the catchphrase as its text content
-    
+        
     // and append that HTML element to the cleared-out DOM
+        catchphrasesEl.append(catchPhraseHistory);
+    }
 }
